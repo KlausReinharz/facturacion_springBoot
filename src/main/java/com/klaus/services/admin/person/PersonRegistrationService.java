@@ -12,6 +12,7 @@ public interface PersonRegistrationService {
     Optional<Person> getPersonId(Long id);
     void updatePerson(Person person);
     void deletePerson(Long id);
+    String VerificationPersonId(String identification);
 
 
 

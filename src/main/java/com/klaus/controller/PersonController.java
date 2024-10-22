@@ -2,6 +2,7 @@ package com.klaus.controller;
 
 import com.klaus.entity.Person;
 import com.klaus.exceptions.BadRequestException;
+import com.klaus.exceptions.ResponseMessage;
 import com.klaus.services.admin.person.PersonRegistrationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -59,6 +60,12 @@ public class PersonController {
         }else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/verification/{identification}")
+    public ResponseEntity<ResponseMessage>VerificationPerson(@PathVariable String identification){
+        String verification = this.personRegistrationService.VerificationPersonId(identification);
+        return  ResponseEntity.ok(new ResponseMessage(200, verification));
     }
 
 

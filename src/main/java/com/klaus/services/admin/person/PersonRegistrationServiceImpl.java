@@ -1,6 +1,5 @@
 package com.klaus.services.admin.person;
 
-import com.klaus.dto.PersonDto;
 import com.klaus.entity.Person;
 import com.klaus.repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +33,10 @@ public class PersonRegistrationServiceImpl implements PersonRegistrationService 
     //delte
     public void deletePerson(Long id){
         this.personRepository.deleteById(id);
+    }
+
+    public String VerificationPersonId(String identification){
+        return this.personRepository.verificarSiExiste(identification);
     }
 
 

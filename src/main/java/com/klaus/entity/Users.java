@@ -13,9 +13,14 @@ public class Users {
     private String userName;
     private String password;
     private String email;
+
+
     private Integer sessionFailed;
-    //lo usaremos como bloqueo
     @Column(columnDefinition = "SMALLINT")
     private byte status;
+
+
     private UserRole userRole;
+
+    
 }
