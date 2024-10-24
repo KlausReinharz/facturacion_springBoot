@@ -1,24 +1,23 @@
 package com.klaus.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
 
 @Data
-@Entity(name = "person")
+@Table(name = "person")
+@Entity
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String lastName;
+
     private String email;
 
     private String identification;
-    private LocalDate dateBirth;
+    private LocalDate dateOfBirth;
 
 }
