@@ -1,18 +1,10 @@
 package com.klaus.services.admin.person;
 
-import com.klaus.entity.Person;
-
-import java.util.List;
-import java.util.Optional;
+import com.klaus.dto.PersonEmailDto;
 
 public interface PersonRegistrationService {
 
-    Person createPerson(Person person);
-    List<Person> getListPerson();
-    Optional<Person> getPersonId(Long id);
-    void updatePerson(Person person);
-    void deletePerson(Long id);
-    String VerificationPersonId(String identification);
+     String generationEmail(PersonEmailDto personEmailDto);
 
 
 

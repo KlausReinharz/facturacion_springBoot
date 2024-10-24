@@ -8,11 +8,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonRepository extends CrudRepository<Person,Long> {
+public interface PersonRepository extends JpaRepository<Person,Long> {
 
-
-    @Query(value = "SELECT count(identification)as identification from project1.person where identification = identification", nativeQuery = true)
-    public String verificarSiExiste(@Param("identification")String identification);
-
+    boolean existsByEmail(String email);
 
 }
