@@ -15,9 +15,11 @@ public class Person {
     private String name;
     private String lastName;
 
-    private String email;
+    private String emailGenerated;
 
     private String identification;
     private LocalDate dateOfBirth;
+
+    private boolean status = true;
 
 }
